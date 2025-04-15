@@ -22,7 +22,8 @@ aplicarTemaSalvo();
 
 // Evento de clique para trocar o tema
 icone.addEventListener('click', () => {
-  body.classList.toggle('claro');
+  body.classList.toggle('claro'); //Se o body já tiver a classe claro, remova. Se não adicione.
+  //Alterna o tema visual da página.
 
   // Atualiza o ícone
   iconeInterno.classList.toggle('fa-moon');
