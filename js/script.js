@@ -69,4 +69,39 @@ function AbrirModal(){ //cria a função
     }
   })
 }
+// Hamburger menu functionality
+const hamburger = document.createElement('div');
+hamburger.classList.add('hamburger');
+hamburger.innerHTML = `
+  <span></span>
+  <span></span>
+  <span></span>
+`;
+document.querySelector('.menu').prepend(hamburger);
 
+const menuLinks = document.querySelector('.menu-links');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  menuLinks.classList.toggle('active');
+});
+
+// Close menu when clicking a link on mobile
+menuLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 768) {
+      hamburger.classList.remove('active');
+      menuLinks.classList.remove('active');
+    }
+  });
+});
+
+// Close menu when clicking outside
+document.addEventListener('click', (e) => {
+  if (window.innerWidth <= 768 && 
+      !hamburger.contains(e.target) && 
+      !menuLinks.contains(e.target)) {
+    hamburger.classList.remove('active');
+    menuLinks.classList.remove('active');
+  }
+});

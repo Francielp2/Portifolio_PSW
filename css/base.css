@@ -91,6 +91,43 @@ body {
     border: 2px solid #4d6edf;
 }
 
+.hamburger {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 25px;
+    cursor: pointer;
+    z-index: 1000;
+    left: 10px;
+}
+
+.hamburger span {
+    width: 100%;
+    height: 3px;
+    background-color: #e0e0e0;
+    transition: all 0.3s ease;
+}
+
+/* Hamburger animation when active */
+.hamburger.active span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+}
+
+.hamburger.active span:nth-child(2) {
+    opacity: 0;
+}
+
+.hamburger.active span:nth-child(3) {
+    transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Menu links for mobile */
+.menu-links {
+    transition: transform 0.3s ease;
+}
+
+
 /*Estilização dos botões que seram ultillzados em todas as páginas as quais esse arquivo for linkado*/
 .botao {
     display: inline-block;
@@ -245,10 +282,60 @@ body.claro {
 /* código responsável pela responsividade */
 /* Responsividade geral para dispositivos até 768px */
 @media (max-width: 768px) {
-    .menu {
-        flex-direction: column;
-        padding: 1rem;
+    .hamburger {
+        display: flex;
     }
+
+    .menu-links {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background-color: #161719;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        transform: translateX(-100%);
+        z-index: 998;
+    }
+
+    .menu-links.active {
+        transform: translateX(0);
+    }
+
+    .menu-links a {
+        font-size: 1.5rem;
+        padding: 20px;
+        width: 100%;
+        text-align: center;
+    }
+
+    .claro .menu-links {
+        background-color: #bbc6cc;
+    }
+
+    .claro .hamburger span {
+        background-color: #121212;
+    }
+
+
+    .menu {
+        position: relative;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .logo {
+        flex-grow: 1;
+        text-align: center;
+    }
+
+    .icone {
+        margin-top: 0;
+    }
+
 
     .logo img {
         width: 50px;
@@ -270,7 +357,6 @@ body.claro {
     .rodape {
         padding: 20px;
     }
-
 }
 
 /* Responsividade extra para telas muito pequenas (ex: celulares antigos ou resolução muito baixa) */
