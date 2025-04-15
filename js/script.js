@@ -38,36 +38,35 @@ icone.addEventListener('click', () => {
 });
 
 // Botão de "voltar ao topo"
-const botaoTopo = document.createElement('button');
-botaoTopo.textContent = '↑';
-botaoTopo.id = 'voltarTopo';
+const botaoTopo = document.createElement('button'); //cria o elemento 
+botaoTopo.textContent = '↑';  // coloca o texto do elemento
+botaoTopo.id = 'voltarTopo'; // adiciona o id 
 document.body.appendChild(botaoTopo);
 
-window.addEventListener('scroll', () => {
-  if (window.scrollY > 400) {
-    botaoTopo.style.display = 'block';
+window.addEventListener('scroll', () => { //quantas pixels foram roladas
+  if (window.scrollY > 400) {  // se rolou mais de 400px
+    botaoTopo.style.display = 'block';// aparece
   } else {
-    botaoTopo.style.display = 'none';
+    botaoTopo.style.display = 'none'; // se não esconda
   }
 });
 
-botaoTopo.addEventListener('click', () => {
-  window.scrollTo({
-    top: 0,
-    behavior: 'smooth'
+botaoTopo.addEventListener('click', () => { //se o evento clicar acontecer 
+  window.scrollTo({// vá para
+    top: 0, // vai para o topo
+    behavior: 'smooth' // faz com que vá suavemente
   });
 });
 //Código para adicionar o formulário da janela modal
 
-function AbrirModal(){
-  const modal = document.getElementById('janela-modal')
-  modal.classList.add('abrir')
+function AbrirModal(){ //cria a função
+  const modal = document.getElementById('janela-modal') //busca o elemento de html (tá no index)
+  modal.classList.add('abrir')// adicona a classe de css
 
-  modal.addEventListener('click' , (e)=>{
-    if(e.target.id == 'fechar'){
-      modal.classList.remove('abrir')
+  modal.addEventListener('click' , (e)=>{ // verifica qualquer clicada na janela modal
+    if(e.target.id == 'fechar'){ // se clicar no botão (do html)
+      modal.classList.remove('abrir')// remove o css
     }
   })
 }
-
 
