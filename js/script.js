@@ -69,39 +69,54 @@ function AbrirModal(){ //cria a função
     }
   })
 }
-// Hamburger menu functionality
+// Funcionalidade hamburguer
+
+// Cria dinamicamente um elemento <div> para o botão hambúrguer
 const hamburger = document.createElement('div');
+
+// Adiciona a classe 'hamburger' à div criada
 hamburger.classList.add('hamburger');
+
+// Define o conteúdo HTML do botão hambúrguer com três <span>, que formam as linhas do ícone
 hamburger.innerHTML = `
   <span></span>
   <span></span>
   <span></span>
 `;
+
+// Insere o botão hambúrguer como o primeiro elemento dentro do menu
 document.querySelector('.menu').prepend(hamburger);
 
+// Seleciona a área que contém os links do menu
 const menuLinks = document.querySelector('.menu-links');
 
+// Adiciona um ouvinte de clique no botão hambúrguer
 hamburger.addEventListener('click', () => {
+  // Alterna a classe 'active' no botão e no menu (abre/fecha o menu)
   hamburger.classList.toggle('active');
   menuLinks.classList.toggle('active');
 });
 
-// Close menu when clicking a link on mobile
+// Fechar o menu ao clicar em um link dentro do menu
 menuLinks.querySelectorAll('a').forEach(link => {
+  // Para cada link do menu, adiciona um ouvinte de clique
   link.addEventListener('click', () => {
+    // Verifica se está em uma tela pequena (modo mobile)
     if (window.innerWidth <= 768) {
+      // Fecha o menu removendo a classe 'active'
       hamburger.classList.remove('active');
       menuLinks.classList.remove('active');
     }
   });
 });
 
-// Close menu when clicking outside
+// Fechar o menu ao clicar fora dele
 document.addEventListener('click', (e) => {
   if (window.innerWidth <= 768 && 
       !hamburger.contains(e.target) && 
       !menuLinks.contains(e.target)) {
+    // Fecha o menu removendo a classe 'active'
     hamburger.classList.remove('active');
     menuLinks.classList.remove('active');
-  }
+  }
 });
