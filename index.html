@@ -1,0 +1,191 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ALPHA BIT - Soluções em Tecnologia</title>
+    <!--linkagens necessárias para página inicial*/-->
+    <link rel="stylesheet" href="css/inicio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!--Cabeçalho comum em todas as páginas-->
+    <header class="cabecalho">
+        <nav class="menu">
+            <div class="logo">
+                <img src="images/logo.png" alt="Logo ALPHA BIT">
+            </div>
+            <ul class="menu-links">
+                <li><a href="index.html" class="ativo">Home</a></li>
+                <li><a href="equipe.html">Equipe</a></li>
+                <li><a href="trabalhos.html">Trabalhos</a></li>
+                <li><a href="sobre.html">Sobre</a></li>
+            </ul>
+            <div class="icone"><i class="fas fa-moon"></i></div>
+        </nav>
+    </header>
+        <!-- Formulário de contato. -->
+
+    <div class="janela-modal" id="janela-modal">
+        <div class="formulario">
+            <button class="fechar" id="fechar"><i class="fas fa-times"></i></button>
+            <form>
+                <h3>Responda o questionário e aguarde nosso atendimento via E-mail ou Whatsapp.</h3>
+                <label for="nome">Nome completo:</label>
+                <input type="text" id="nome" placeholder="Digite seu nome" required>
+                <br>
+                <label for="e-mail">E-mail:</label>
+                <input type="email" id="e-mail" placeholder="exemplo@exemplo.com" required>
+                <br>
+                <label for="telefone">Whatsapp:</label>
+                <input type="tel" id="telefone" placeholder="(99)99999-9999" required>
+                <br>
+                <p>Qual a finalidade de seu projeto?</p>
+                <input type="radio" id="projeto-pessoal" name="finalidade" required>
+                <label for="projeto-pessoal">Para uso pessoal.</label>
+                <br>
+                <input type="radio" id="projeto-profissional" name="finalidade">
+                <label for="projeto-profissional">Para minha empresa.</label>
+                <br>
+                <input type="radio" id="projeto-portifolio" name="finalidade">
+                <label for="projeto-portifolio">Para meu portifólio.</label>
+                <br>
+                <input type="radio" id="projeto-academico" name="finalidade">
+                <label for="projeto-academico">Para meu TCC.</label>
+                <br>
+                <input type="radio" id="outra" name="finalidade">
+                <label for="outro">Outra</label>
+                <br>
+                <label for="outra2">Caso outra, informe a finalidade:</label>
+                <br>
+                <input type="text" id="outra2" placeholder="Informe a finalidade">
+                <br>
+                <label for="descricao">Descrição do projeto:</label>
+                <br>
+                <textarea name="descricao" id="descricao" placeholder="Dê uma breve descrição do projeto"></textarea>
+                <br>
+                <input type="reset">
+                <input type="submit">
+            </form>
+        </div>
+    </div>
+    <!--Conteúdo principal da página inicial-->
+    <main>
+        <section class="secao-principal">
+            <div class="conteudo-principal container">
+                <h1 class="titulo-principal">CONHEÇA NOSSA <P></P>EMPRESA</h1>
+                <p class="subtitulo-principal">Soluções tecnológicas para impulsionar seu negócio</p>
+                <a href="#servicos" class="botao-primario">Nossos serviços <i class="fas fa-arrow-right"></i></a>
+            </div>
+        </section>
+        <!--segunda parte da página principal destaques-->
+        <section id="servicos" class="secao-destaques">
+            <div class="container">
+                <h2>Nossas Soluções</h2>
+                <div class="grade-servicos">
+                    <div class="cartao-servico">
+                        <div class="icone-servico">
+                            <div class="placeholder-icone">
+                                <i class="fas fa-code"></i>
+                            </div>
+                        </div>
+                        <h3>Desenvolvimento Web</h3>
+                        <p>Sites e aplicações web modernas e responsivas para sua empresa, utilizando as mais recentes
+                            tecnologias do mercado.</p>
+                    </div>
+                    <div class="cartao-servico">
+                        <div class="icone-servico">
+                            <div class="placeholder-icone">
+                                <i class="fas fa-mobile-alt"></i>
+                            </div>
+                        </div>
+                        <h3>Aplicativos Mobile</h3>
+                        <p>Apps nativos e híbridos para iOS e Android com experiência de usuário excepcional e
+                            desempenho otimizado.</p>
+                    </div>
+                    <div class="cartao-servico">
+                        <div class="icone-servico">
+                            <div class="placeholder-icone">
+                                <i class="fas fa-chart-line"></i>
+                            </div>
+                        </div>
+                        <h3>Marketing Digital</h3>
+                        <p>Estratégias completas para aumentar sua presença online, gerar tráfego qualificado e
+                            converter visitantes em clientes.</p>
+                    </div>
+                    <div class="cartao-servico">
+                        <div class="icone-servico">
+                            <div class="placeholder-icone">
+                                <i class="fas fa-cogs"></i>
+                            </div>
+                        </div>
+                        <h3>Consultoria em TI</h3>
+                        <p>Orientação especializada para otimizar seus processos tecnológicos e impulsionar a eficiência
+                            operacional do seu negócio.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--estátisticas da empresa-->
+        <section class="secao-estatisticas">
+            <div class="container">
+                <div class="grade-estatisticas">
+                    <div class="item-estatistica">
+                        <div class="numero-estatistica">30+</div>
+                        <div class="legenda-estatistica">Projetos Concluídos</div>
+                    </div>
+                    <div class="item-estatistica">
+                        <div class="numero-estatistica">100%</div>
+                        <div class="legenda-estatistica">Comprometimento</div>
+                    </div>
+                    <div class="item-estatistica">
+                        <div class="numero-estatistica">3+</div>
+                        <div class="legenda-estatistica">Anos de Experiência</div>
+                    </div>
+                    <div class="item-estatistica">
+                        <div class="numero-estatistica">15+</div>
+                        <div class="legenda-estatistica">Clientes Satisfeitos</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!--seção de cta-->
+        <section class="secao-cta">
+            <div class="container">
+                <h2>Pronto para transformar sua ideia em realidade?</h2>
+                <p>Entre em contato conosco hoje mesmo e descubra como podemos ajudar sua empresa a alcançar o próximo
+                    nível com soluções tecnológicas inovadoras e personalizadas.</p>
+                <div class="botoes-cta">
+                    <a onclick="AbrirModal()" class="botao-primario">Solicitar Orçamento</a>
+                    <a href="trabalhos.html" class="botao-secundario">Ver Nossos Trabalhos</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!--rodapé-->
+    <footer class="rodape">
+        <div class="container">
+            <p>&copy; 2024 ALPHA BIT. Todos os direitos reservados.</p>
+            <div class="social-icons">
+                <a href="#" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                <a href="#" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                <a href="#" aria-label="GitHub"><i class="fab fa-github"></i></a>
+            </div>
+            <p class="contato-info">contato@alphabit.com.br | +55 (99) 99999-9999</p>
+        </div>
+    </footer>
+    <script src="/js/script.js"></script>
+
+
+
+</body>
+
+</html>

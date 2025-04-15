@@ -1,0 +1,628 @@
+/*iMportar códigos de outars páginas css*/
+@import url('base.css');
+@import url('imagens.css');
+
+
+/*Estilização da section seção principal */
+.secao-principal {
+    min-height: 100vh;
+    display: flex;
+    align-items: center;
+    background-image: url('../images/imagemdefundo2.jpg');
+    opacity: 10;
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.conteudo-principal {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 40px;
+}
+
+.titulo-principal {
+    font-size: 3.5rem;
+    font-weight: 700;
+    color: #ffffff;
+    margin-bottom: 1.5rem;
+    letter-spacing: 1px;
+    line-height: 1.2;
+    text-transform: uppercase;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+    position: relative;
+}
+
+.subtitulo-principal {
+    font-size: 1.9rem;
+    color: white;
+    margin-bottom: 2.5rem;
+    max-width: 600px;
+    line-height: 1.6;
+}
+
+/*Estilização da segunda parte da página principal detalhes.*/
+.secao-destaques {
+    padding: 6rem 2rem;
+    text-align: center;
+    background-color: #121212;
+}
+
+.secao-destaques h2 {
+    font-size: 2.5rem;
+    margin-bottom: 3.5rem;
+    color: #ffffff;
+    position: relative;
+    display: inline-block;
+    letter-spacing: 1px;
+}
+
+/* Responsavél por adicionar um elemento em azul abaixo da tag h2 sem mudar o css */
+.secao-destaques h2::after {
+    content: '';
+    position: absolute;
+    width: 50%;
+    height: 3px;
+    background-color: #4d6edf;
+    bottom: -15px;
+    left: 25%;
+}
+
+/* Faz com que todos os elementos com essa class fiquem organizados em grade*/
+.grade-servicos {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 40px;
+}
+
+/* estilização e animação de todos os elementos de destaque um a um */
+.cartao-servico {
+    background-color: #1e1e1e;
+    padding: 2.5rem;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+    transition: all 0.4s ease;
+    position: relative;
+    overflow: hidden;
+    border: 1px solid #2c2c2c;
+}
+
+/* adiciona linha azul no topo do cartão */
+.cartao-servico::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: #4d6edf;
+    transform: scaleX(0);
+    transform-origin: right;
+    transition: transform 0.4s ease;
+}
+
+/* adiciona a sombra e a borda ao passar o mouse no elemento */
+.cartao-servico:hover {
+    transform: translateY(-15px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4);
+    border-color: #4d6edf;
+}
+
+/* inicia a animação da linha azul quando passa o mouse no elemento */
+.cartao-servico:hover::before {
+    transform: scaleX(1);
+    transform-origin: left;
+}
+
+/* estlilização dos icones de cada solução */
+.icone-servico {
+    margin-bottom: 25px;
+}
+
+/* estiliza o elemento em que o ícone será inserido */
+.placeholder-icone {
+    width: 80px;
+    height: 80px;
+    background-color: #4d6edf;
+    border-radius: 50%;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    font-size: 2.2rem;
+    box-shadow: 0 5px 15px rgba(77, 110, 223, 0.3);
+    transition: transform 0.3s ease;
+}
+
+/* Dá um zoom no icone ao passar o mouse no cartão */
+.cartao-servico:hover .placeholder-icone {
+    transform: scale(1.3);
+}
+
+/* estilização do texto descrição de cada destaque */
+.cartao-servico h3 {
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    color: #ffffff;
+}
+
+.cartao-servico p {
+    color: #a0a0a0;
+    line-height: 1.8;
+    font-size: 1.05rem;
+}
+
+/* Estilização da section de estatisticas da empresa. */
+.secao-estatisticas {
+    background-color: #1a1a1a;
+    padding: 6rem 2rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+}
+
+/* adiciona o gradiente em todos os elementos da section estatistica */
+.secao-estatisticas::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(77, 110, 223, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Faz com que os elementos das estátisticas se organizem na forma de grade automáticamente */
+.grade-estatisticas {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 40px;
+    text-align: center;
+}
+
+/* elemento da estatística */
+.item-estatistica {
+    padding: 25px;
+    transition: transform 0.4s ease, box-shadow 0.4s ease;
+    background-color: #1e1e1e;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid #2c2c2c;
+}
+
+/* Dá os efeitos quando se passa o mouse em cima do elemento da estatística */
+.item-estatistica:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: #4d6edf;
+}
+
+/* Estilização do número da estátistica  */
+.numero-estatistica {
+    font-size: 3.5rem;
+    font-weight: 700;
+    margin-bottom: 1rem;
+    color: #4d6edf;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilização da legenda da estátistica */
+.legenda-estatistica {
+    font-size: 1.3rem;
+    color: #e0e0e0;
+    letter-spacing: 1px;
+    /*deixa as letras mais separadas */
+}
+
+/*Estilização para seção cta*/
+.secao-cta {
+    margin-top: 50px;
+    padding: 6rem 2rem;
+    text-align: center;
+    background-color: #1e1e1e;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Adiciona o gradiente em todos os elementos da section seção-cta */
+.secao-cta::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(77, 110, 223, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* estilização do titulo da seção cta */
+.secao-cta h2 {
+    font-size: 2.5rem;
+    margin-bottom: 1.8rem;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Estilização do texto da seção principal */
+.secao-cta p {
+    font-size: 1.3rem;
+    margin-bottom: 2.5rem;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    color: #a0a0a0;
+    line-height: 1.8;
+}
+
+/*Posicionamento dos botões cta, que já estão estilizados no css base*/
+.botoes-cta {
+    display: flex;
+    justify-content: center;
+    gap: 25px;
+}
+
+/* Estilização para o tema claro */
+.claro main {
+    background-color: #f4f6f8;
+    opacity: 100;
+}
+
+.claro .secao-principal {
+    background-color: #3c3c3c;
+    opacity: 0.8;
+}
+
+.claro .titulo-principal,
+.claro .subtitulo-principal {
+    text-shadow:
+        -2px -2px 0 #000000,
+        2px -2px 0 #000000,
+        -2px 2px 0 #000000,
+        2px 2px 0 #000000,
+        -1px 0px 0 #000000,
+        1px 0px 0 #000000,
+        0px -1px 0 #000000,
+        0px 1px 0 #000000;
+}
+
+.claro .botao-primario,
+.claro .botao-secundario {
+    color: #000000;
+}
+
+.claro .secao-destaques {
+    background-color: #ffffff;
+}
+
+.claro .secao-destaques h2 {
+    color: #121212
+}
+
+.claro .cartao-servico {
+    background-color: #bbc6cc;
+}
+
+.claro .cartao-servico h3,
+.claro .cartao-servico p {
+    color: #121212;
+}
+
+.claro .secao-estatisticas {
+    background-color: #ffffff;
+    border: 5px solid #bbc6cc;
+}
+
+.claro .item-estatistica {
+    background-color: #bbc6cc;
+}
+
+.claro .legenda-estatistica {
+    color: #121212;
+}
+
+.claro .secao-cta {
+    background-color: #ffffff;
+    border: 5px solid #bbc6cc;
+}
+
+.claro .secao-cta h2,
+.claro .secao-cta p {
+    color: #121212
+}
+
+/* Estilização para a janela modal e para o formulário  */
+.janela-modal {
+    width: 100%;
+    height: 100vh;
+    background-color: #121212eb;
+    position: fixed;
+    top: 0;
+    left: 0;
+    display: none;
+    align-items: center;
+    justify-content: center;
+    z-index: 1000;
+}
+
+.janela-modal.abrir {
+    display: flex;
+}
+
+.formulario {
+    width: 60%;
+    min-width: 500px;
+    background-color: #bbc6cc50;
+    backdrop-filter: blur(10px);
+    padding: 50px;
+    border-radius: 20px;
+    line-height: 2rem;
+}
+
+.formulario h3 {
+    color: #121212;
+    font-size: 25px;
+    margin-bottom: 20px;
+}
+
+.formulario p {
+    color: #121212;
+    font-size: 18px;
+    font-weight: 600;
+    margin-top: 30px;
+}
+
+.formulario label {
+    color: #121212;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.formulario label[for="e-mail"],
+.formulario label[for="nome"],
+.formulario label[for="telefone"] {
+    display: inline-block;
+    width: 200px;
+}
+
+.formulario input {
+    background-color: #bbc6cc;
+    border: none;
+    border-radius: 5px;
+    height: 25px;
+}
+
+.formulario input[type="text"],
+.formulario input[type="tel"],
+.formulario input[type="email"] {
+    width: 60%;
+    margin-left: 50px
+}
+
+.formulario input[type="radio"] {
+    margin-left: 50px;
+    height: 20px;
+    width: 20px;
+    accent-color: #bbc6bb;
+}
+
+.formulario textarea {
+    margin-left: 50px;
+    background-color: #bbc6cc;
+    border: none;
+    border-radius: 5px;
+    height: 100px;
+    width: 60%;
+}
+
+.formulario input[type="reset"] {
+    margin-left: 50px;
+    width: 60px;
+    color: #121212;
+}
+
+.formulario input[type="submit"] {
+    margin-left: 20px;
+    width: 60px;
+    color: #121212;
+}
+
+.formulario input[type="submit"]:hover,
+.formulario input[type="reset"]:hover {
+    background-color: #4d6edf;
+    box-shadow: 2px 2px 5px #8ea6f7;
+}
+
+input::placeholder,
+textarea::placeholder {
+    color: #121212;
+    font-style: italic;
+    font-size: 16px;
+}
+
+.fechar {
+    position: absolute;
+    top: -5px;
+    right: -5px;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    border: none;
+    background-color: red;
+    color: #fff;
+    cursor: pointer;
+    transition: all 0.4s ease;
+}
+
+.fechar:hover {
+    background-color: rgb(216, 99, 99);
+    box-shadow: -2px -2px 5px rgb(252, 252, 252);
+    transform: translateY(-2px);
+}
+
+/*Animação para abrir e fechar formulário*/
+
+@keyframes AbrirFechar {
+    from {
+        opacity: 0;
+        transform: translate(0, -20px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translate(0, 0);
+    }
+}
+
+.abrir .formulario {
+    animation: AbrirFechar 1s;
+}
+
+/* Parte do código responsável pela responsividade */
+@media(max-width:1500px) {
+    .janela-modal {
+        overflow-y: auto;
+    }
+
+    .formulario {
+        overflow-y: auto;
+        max-height: 90vh;
+    }
+
+    .fechar {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .conteudo-principal {
+        flex-direction: column;
+        align-items: center;
+        gap: 20px;
+    }
+
+    .titulo-principal {
+        font-size: 2.2rem;
+        text-align: center;
+    }
+
+    .subtitulo-principal {
+        font-size: 1.2rem;
+        text-align: center;
+        padding: 0 1rem;
+    }
+
+    .botoes-cta {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .formulario {
+        width: 90%;
+        min-width: unset;
+        padding: 30px;
+    }
+
+    .formulario input[type="text"],
+    .formulario input[type="tel"],
+    .formulario input[type="email"],
+    .formulario textarea {
+        width: 100%;
+        margin-left: 0;
+    }
+
+    .formulario label[for="e-mail"],
+    .formulario label[for="nome"],
+    .formulario label[for="telefone"] {
+        width: 100%;
+        margin-bottom: 5px;
+    }
+
+    .formulario input[type="radio"] {
+        margin-left: 0;
+    }
+
+    .formulario input[type="submit"],
+    .formulario input[type="reset"] {
+        width: 100%;
+        margin: 15px 0 0 0;
+    }
+
+    .fechar {
+        top: 10px;
+        right: 10px;
+    }
+}
+
+@media (max-width: 340px) {
+    .titulo-principal {
+        font-size: 1.8rem;
+    }
+
+    .subtitulo-principal {
+        font-size: 1rem;
+    }
+
+    .secao-destaques h2 {
+        font-size: 1.8rem;
+    }
+
+    .cartao-servico h3 {
+        font-size: 1.2rem;
+    }
+
+    .cartao-servico p {
+        font-size: 0.95rem;
+    }
+
+    .placeholder-icone {
+        width: 60px;
+        height: 60px;
+        font-size: 1.6rem;
+    }
+
+    .numero-estatistica {
+        font-size: 2.5rem;
+    }
+
+    .legenda-estatistica {
+        font-size: 1.1rem;
+    }
+
+    .secao-cta h2 {
+        font-size: 1.8rem;
+    }
+
+    .secao-cta p {
+        font-size: 1rem;
+    }
+
+    .formulario {
+        padding: 20px;
+    }
+
+    .formulario h3 {
+        font-size: 20px;
+    }
+
+    .formulario p,
+    .formulario label {
+        font-size: 16px;
+    }
+
+    .formulario input::placeholder,
+    .formulario textarea::placeholder {
+        font-size: 14px;
+    }
+
+    .botao-secundario {
+        margin-bottom: 50px;
+    }
+}

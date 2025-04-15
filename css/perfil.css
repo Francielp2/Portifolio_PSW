@@ -1,0 +1,336 @@
+/* ===== IMPORTAÇÃO DO CSS BASE ===== */
+@import url('base.css');
+@import url('imagens.css');
+
+body {
+    font-family: 'Montserrat', sans-serif;
+}
+
+/* ===== SEÇÃO PRINCIPAL DO PERFIL ===== */
+
+/* Estilização da seção perfil comum a página de todos os membros */
+.secao-perfil {
+    margin-top: 5.3rem;
+    height: 70vh;
+    min-height: 450px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    background-color: #1a1a1a;
+    position: relative;
+    overflow: hidden;
+}
+
+/* Adiciona um gradient a essa section */
+.secao-perfil::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: radial-gradient(circle at center, rgba(77, 110, 223, 0.1) 0%, transparent 70%);
+    pointer-events: none;
+}
+
+/* Estilização do placeholder onde ficará a foto de perfil que será adicionada no arquivo css- image */
+.foto-perfil {
+    width: 300px;
+    height: 300px;
+    position: relative;
+    background-color: #2c2c2c;
+    background-size: cover;
+    background-position: center;
+    border-radius: 50%;
+    margin-bottom: 30px;
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.4), 0 0 15px rgba(77, 110, 223, 0.3);
+    border: 5px solid #4d6edf;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.foto-perfil:hover {
+    transform: scale(1.03);
+    box-shadow: 0 20px 40px rgba(0, 0, 0, 0.5), 0 0 20px rgba(77, 110, 223, 0.4);
+}
+
+/* Estilização do nome do membro que é comum a todas as páginas  */
+.container-nome {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.container-nome h1 {
+    font-size: 2.8rem;
+    margin-bottom: 15px;
+    color: #ffffff;
+    letter-spacing: 1px;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* estilização da função do membro que também é comum a todas as páginas  */
+.container-nome .cargo {
+    font-size: 1.3rem;
+    color: #4d6edf;
+    font-style: italic;
+    letter-spacing: 1px;
+}
+
+/* ===== INFORMAÇÕES DO MEMBRO ===== */
+.info-membro {
+    max-width: 800px;
+    margin: 70px auto;
+    padding: 0 20px;
+}
+
+/* Estilização das informações bibliográficas sobre o membro */
+.bio-membro {
+    margin-bottom: 50px;
+}
+
+.bio-membro h2 {
+    font-size: 2rem;
+    margin-bottom: 25px;
+    color: #ffffff;
+    position: relative;
+    letter-spacing: 1px;
+}
+
+/* Adiciona um elemento azul embaixo dos títulos */
+.bio-membro h2::after {
+    content: '';
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #4d6edf;
+    margin-top: 12px;
+}
+
+/* Estilização dos paragráfos que contém as informações do membro */
+.bio-membro p {
+    margin-bottom: 20px;
+    line-height: 1.8;
+    color: #a0a0a0;
+    text-align: justify;
+    font-size: 1.05rem;
+}
+
+/* ===== LISTA DE HABILIDADES ===== */
+
+.lista-habilidades {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 12px;
+    margin-bottom: 50px;
+    list-style: none;
+}
+
+/* Estilização dos spans que estão dentro da lista-habilidades  */
+.lista-habilidades li span {
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #bbc6cc;
+    color: #121212;
+    border-radius: 20px;
+    font-size: 0.95rem;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    border: 1px solid #4d6edf;
+}
+
+.lista-habilidades li span:hover {
+    background-color: #4d6edf;
+    color: #ffffff;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(77, 110, 223, 0.3);
+}
+
+/* ===== PROJETOS DO MEMBRO ===== */
+
+.projetos-membro {
+    margin-bottom: 70px;
+}
+
+/* Estilização para div onde será apresentada cada projeto */
+.projeto-membro {
+    background-color: #1e1e1e;
+    padding: 25px;
+    border-radius: 10px;
+    margin-bottom: 25px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+    border: 1px solid #2c2c2c;
+    transition: all 0.3s ease;
+}
+
+.projeto-membro:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+    border-color: #4d6edf;
+}
+
+/* Estilização do titulo que será comum em todos os projetos */
+.projeto-membro h3 {
+    color: #ffffff;
+    margin-bottom: 15px;
+    font-size: 1.5rem;
+    letter-spacing: 0.5px;
+}
+
+/* Estilização do paragráfo que será comum em todos os projetos */
+.projeto-membro p {
+    color: #a0a0a0;
+    line-height: 1.7;
+    margin-bottom: 15px;
+    font-size: 1.05rem;
+}
+
+/* Estilização das spans que foram adicionadas nas divs projeto-membro da página do membro franciel */
+.tecnologias-projeto {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin-top: 15px;
+}
+
+.tecnologia-tag {
+    display: inline-block;
+    padding: 5px 12px;
+    background-color: rgba(77, 110, 223, 0.15);
+    color: #4d6edf;
+    border-radius: 15px;
+    font-size: 0.8rem;
+    font-weight: 500;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.tecnologia-tag:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(77, 110, 223, 0.3);
+}
+
+/* Os botões seguem estilização do css base */
+/* Estilização para modo claro */
+
+.claro .botao {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+}
+
+.claro .secao-perfil {
+    background-color: #bbc6cc;
+}
+
+.claro .secao-perfil h1 {
+    color: #121212;
+}
+
+.claro .info-membro h2,
+.claro .info-membro p {
+    color: #121212;
+}
+
+.claro .lista-habilidades li span {
+    background-color: #2c2c2c;
+    color: #e0e0e0;
+}
+
+.claro .projeto-membro {
+    background-color: #bbc6cc;
+}
+
+.claro .projeto-membro h3 {
+    color: #121212
+}
+
+/* Telas até 768px (celulares grandes e tablets) */
+@media (max-width: 768px) {
+    .secao-perfil {
+        margin-top: 8rem;
+        padding: 20px;
+    }
+
+    .foto-perfil {
+        width: 200px;
+        height: 200px;
+    }
+
+    .container-nome h1 {
+        font-size: 1.9rem;
+    }
+
+    .container-nome .cargo {
+        font-size: 1.1rem;
+    }
+
+    .bio-membro h2 {
+        font-size: 1.5rem;
+    }
+
+    .bio-membro p,
+    .projeto-membro p {
+        font-size: 0.95rem;
+    }
+
+    .lista-habilidades {
+        justify-content: center;
+    }
+
+    .lista-habilidades li span {
+        font-size: 0.9rem;
+        padding: 8px 14px;
+    }
+
+    .tecnologia-tag {
+        font-size: 0.75rem;
+        padding: 4px 10px;
+    }
+}
+
+/* Telas até 480px (celulares pequenos) */
+@media (max-width: 480px) {
+    .foto-perfil {
+        width: 150px;
+        height: 150px;
+    }
+
+    .container-nome h1 {
+        font-size: 1.6rem;
+    }
+
+    .container-nome .cargo {
+        font-size: 1rem;
+    }
+
+    .bio-membro h2 {
+        font-size: 1.3rem;
+    }
+
+    .bio-membro p,
+    .projeto-membro p {
+        font-size: 0.9rem;
+    }
+
+    .lista-habilidades {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .info-membro {
+        padding: 0 15px;
+    }
+
+    .projeto-membro {
+        padding: 20px;
+    }
+
+    .tecnologia-tag {
+        font-size: 0.7rem;
+    }
+}
+
+@media(max-width:340px) {
+    .botao {
+        margin-bottom: 50px;
+    }
+}

@@ -1,0 +1,72 @@
+/* arquivo de css responsável por adicionar imagens nos placehoders que foram definidos no html e nos outros arquivos*/
+
+/* foto de franciel na página de equipe */
+.membro-equipe:nth-child(1) .foto-membro { /*Esse seletor faz com que apenas o primeiro elemento com a class foto membro será estilizado isso tambem acontece nas demais fotos porem com seletores diferentes*/
+    background-image: url('../images/franciel.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* foto de francimara na página de equipe */
+.membro-equipe:nth-child(2) .foto-membro {
+    background-image: url('../images/fotofran.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* foto de João gabriel na página de equipe */
+.membro-equipe:nth-child(3) .foto-membro {
+    background-image: url('../images/fotojg.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* Fotos nas páginas individuais */
+#franciel .foto-perfil { /*Este seletor faz com que o elemento com o ID franciel tenha sua class foto-perfil estilizada assim como os demais seletores abaixo*/
+    background-image: url('../images/franciel.png');
+}
+
+#francimara .foto-perfil {
+    background-image: url('../images/fotofran.jpg');
+}
+
+#joao .foto-perfil {
+    background-image: url('../images/fotojg.jpg');
+}
+
+/* imagens dos projetos na página de trabalho*/
+/* imagem para projeto padaria */
+.projeto:nth-child(1) .imagem-projeto {
+    background-image: url('../images/projetopadaria.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* imagem para projto salão */
+.projeto:nth-child(2) .imagem-projeto {
+    background-image: url('../images/projetobeleza.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* imagem para projto artesanato */
+.projeto:nth-child(3) .imagem-projeto {
+    background-image: url('../images/projetoartesanato.png');
+    background-size: cover;
+    background-position: center;
+}
+
+/* imagem do pórtifolio para o fotografo */
+.projeto:nth-child(4) .imagem-projeto {
+    background-image: url('../images/projetofotografia.jpg');
+    background-size: cover;
+    background-position: center;
+}
+
+/* imagem da página sobre a empresa*/
+.imagem-sobre {
+    background-image: url('../images/empresasobre.jpg');
+    background-size: cover;
+    background-position: center;
+}
+

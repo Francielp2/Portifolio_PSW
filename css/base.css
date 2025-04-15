@@ -1,0 +1,357 @@
+/*Ressetar css*/
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/*Define a fonte arial para todas as páginas as quais esse css for linkado*/
+body {
+    font-family: 'Montserrat', sans-serif;
+    line-height: 1.6;
+    background-color: #121212;
+    /* color: #e0e0e0; */
+}
+
+/*Estilização para o cabeçlho que será aplicado em todas as páginas */
+.cabecalho {
+    background-color: #161719;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    width: 100%;
+    height: auto;
+    top: 0;
+    opacity: 0.9;
+    z-index: 999;
+}
+
+/* estilização para o menu que será usado em todas as páginas */
+.menu {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: auto 5%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Formatação para imagem logo que fica no menu */
+.logo img {
+    width: 60px;
+    height: 60px;
+    margin: 10px auto;
+    border-radius: 50%;
+    border: 3px solid #4d6edf;
+    transition: transform 0.3s ease;
+}
+
+.logo img:hover {
+    transform: scale(1.1);
+}
+
+/* Links do menu */
+.menu-links {
+    display: flex;
+    list-style: none;
+    gap: 2px;
+}
+
+.menu-links a {
+    color: #e0e0e0;
+    text-decoration: none;
+    padding: 0 15px;
+    font-weight: 500;
+    transition: color 0.3s ease, transform 0.2s ease;
+}
+
+/* Mudança de cor para quando o usuário passar o mouse em cima */
+.menu-links a:hover,
+.menu-links a.ativo {
+    color: #4d6edf;
+    transform: translateY(-2px);
+}
+
+/* Estilização para o ícone de trocar o tema */
+.icone {
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    background-color: #121212;
+    cursor: pointer;
+    transition: all 0.4s ease;
+    color: #e9effa;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+}
+
+.icone:hover {
+    transform: translateY(-2px);
+    border: 2px solid #4d6edf;
+}
+
+/*Estilização dos botões que seram ultillzados em todas as páginas as quais esse arquivo for linkado*/
+.botao {
+    display: inline-block;
+    padding: 10px 20px;
+    margin-top: 20px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #bbc6cc;
+    color: #121212;
+    border: 1px solid #4d6edf;
+}
+
+.botao:hover {
+    background-color: #4d6edf;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(77, 110, 223, 0.3);
+}
+
+/* Botões da cta da página principal */
+.botao-primario {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: #4d6edf;
+    color: #ffffff;
+    border: none;
+}
+
+.botao-primario:hover {
+    background-color: #3a59c7;
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(77, 110, 223, 0.4);
+}
+
+.botao-secundario {
+    display: inline-block;
+    padding: 12px 24px;
+    border-radius: 5px;
+    text-decoration: none;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background-color: transparent;
+    color: #e0e0e0;
+    border: 1px solid #4d6edf;
+}
+
+.botao-secundario:hover {
+    background-color: rgba(77, 110, 223, 0.1);
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(77, 110, 223, 0.2);
+}
+
+/*rodapé que será aplicato a todas as páginas*/
+.rodape {
+    background-color: #1e1e1e;
+    color: #a0a0a0;
+    text-align: center;
+    padding: 30px;
+    margin-top: auto;
+    width: 100%;
+    border-top: 1px solid #2c2c2c;
+}
+
+.rodape p {
+    margin-bottom: 10px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.social-icons a {
+    color: #4d6edf;
+    font-size: 1.2rem;
+    transition: transform 0.3s ease;
+}
+
+.social-icons a:hover {
+    transform: translateY(-3px);
+}
+
+/* Garante o alinhamento e a responsividade dos elementos os quais essa class for aplicada*/
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+/* Estilização do botão que foi criado usando js */
+#voltarTopo {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background: #4d6edf;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    border-radius: 50%;
+    font-size: 20px;
+    cursor: pointer;
+    display: none;
+    /* Só aparece após scroll */
+    z-index: 999;
+    transition: transform 0.3s ease;
+}
+
+#voltarTopo:hover {
+    transform: scale(1.1);
+}
+
+/* Estililização para o modo tema claro */
+body.claro {
+    background-color: #ffffff;
+}
+
+.claro .cabecalho,
+.claro.icone {
+    transition: all 1s ease;
+    background-color: #bbc6cc;
+}
+
+.claro .menu-links a {
+    color: #121212;
+}
+
+.claro .menu-links a:hover,
+.claro .menu-links a.ativo {
+    color: #4d6edf;
+    transform: translateY(-2px);
+}
+
+.claro .rodape {
+    transition: all 1s ease;
+    background-color: #bbc6cc;
+}
+
+.claro .rodape p {
+    color: #121212;
+}
+
+/* código responsável pela responsividade */
+/* Responsividade geral para dispositivos até 768px */
+@media (max-width: 768px) {
+    .menu {
+        flex-direction: column;
+        padding: 1rem;
+    }
+
+    .logo img {
+        width: 50px;
+        height: 50px;
+        margin: 8px auto;
+    }
+
+    .botao,
+    .botao-primario,
+    .botao-secundario {
+        width: 90%;
+        text-align: center;
+    }
+
+    .icone {
+        margin-top: 10px;
+    }
+
+    .rodape {
+        padding: 20px;
+    }
+
+}
+
+/* Responsividade extra para telas muito pequenas (ex: celulares antigos ou resolução muito baixa) */
+@media (max-width: 480px) {
+    .menu {
+        padding: 0.5rem;
+    }
+
+    .menu-links a {
+        font-size: 14px;
+        padding: 0 8px;
+    }
+
+    .logo img {
+        width: 45px;
+        height: 45px;
+    }
+
+    .botao,
+    .botao-primario,
+    .botao-secundario {
+        font-size: 14px;
+        padding: 10px;
+    }
+
+    #voltarTopo {
+        padding: 8px 12px;
+        font-size: 16px;
+    }
+}
+
+/* Ajustes para telas muito estreitas (ex: 340px ou menor) */
+@media (max-width: 340px) {
+    .menu {
+        flex-direction: column;
+        padding: 0.5rem;
+    }
+
+    .menu-links a {
+        padding: 0 5px;
+        font-size: 12px;
+    }
+
+    .logo img {
+        width: 40px;
+        height: 40px;
+    }
+
+    .icone {
+        width: 25px;
+        height: 25px;
+        font-size: 14px;
+    }
+
+    .botao,
+    .botao-primario,
+    .botao-secundario {
+        padding: 8px;
+        font-size: 12px;
+    }
+
+    #voltarTopo {
+        bottom: 15px;
+        right: 15px;
+        padding: 6px 10px;
+        font-size: 14px;
+    }
+
+    .rodape {
+        position: fixed;
+        height: 100px;
+        bottom: 0;
+    }
+
+    .rodape p {
+        font-size: 10px;
+        line-height: 1px;
+    }
+
+    .social-icons a {
+        font-size: 1rem;
+    }
+
+}
